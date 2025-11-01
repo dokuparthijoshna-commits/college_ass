@@ -1,0 +1,42 @@
+{
+  "Monday": [
+    {"course_name":"DAA","start_time":"10:00","end_time":"11:00","location":"E338"},
+    {"course_name":"Field Project","start_time":"11:00","end_time":"12:00","location":"E338"},
+    {"course_name":"OOPS Lab","start_time":"13:40","end_time":"15:40","location":"E201/202"},
+    {"course_name":"—","start_time":"15:40","end_time":"16:40","location":"E338"}
+  ],
+  "Tuesday": [
+    {"course_name":"PP Lab","start_time":"10:00","end_time":"12:00","location":"E301/302"},
+    {"course_name":"MFCS","start_time":"13:40","end_time":"14:40","location":"E338"},
+    {"course_name":"EEA","start_time":"14:40","end_time":"15:40","location":"E338"}
+  ],
+  "Wednesday": [
+    {"course_name":"DBMS","start_time":"10:00","end_time":"11:00","location":"E338"},
+    {"course_name":"H/W","start_time":"11:00","end_time":"12:00","location":"E338"},
+    {"course_name":"OOPS","start_time":"13:40","end_time":"14:40","location":"E338"},
+    {"course_name":"DAA","start_time":"14:40","end_time":"15:40","location":"E338"},
+    {"course_name":"ECA","start_time":"15:40","end_time":"16:40","location":"E338"}
+  ],
+  "Thursday": [
+    {"course_name":"OOPS","start_time":"10:00","end_time":"11:00","location":"E338"},
+    {"course_name":"EEA","start_time":"11:00","end_time":"12:00","location":"E338"},
+    {"course_name":"DBMS","start_time":"13:40","end_time":"14:40","location":"E338"},
+    {"course_name":"DBMS Lab","start_time":"14:40","end_time":"16:40","location":"E303/306"}
+  ],
+  "Friday": [
+    {"course_name":"MFCS","start_time":"10:00","end_time":"11:00","location":"E338"},
+    {"course_name":"OOPS","start_time":"11:00","end_time":"12:00","location":"E338"},
+    {"course_name":"DAA","start_time":"13:40","end_time":"14:40","location":"E338"},
+    {"course_name":"DBMS","start_time":"14:40","end_time":"15:40","location":"E338"},
+    {"course_name":"LIB","start_time":"15:40","end_time":"16:40","location":"Library"},
+    {"course_name":"SPORTS","start_time":"16:40","end_time":"17:40","location":"Ground"}
+  ],
+  "Saturday": [
+    {"course_name":"EEA","start_time":"10:00","end_time":"11:00","location":"E338"},
+    {"course_name":"DAA","start_time":"11:00","end_time":"12:00","location":"E338"},
+    {"course_name":"MFCS","start_time":"13:40","end_time":"14:40","location":"E338"},
+    {"course_name":"DBMS","start_time":"14:40","end_time":"15:40","location":"E338"},
+    {"course_name":"OOPS","start_time":"15:40","end_time":"16:40","location":"E338"},
+    {"course_name":"CCA","start_time":"16:40","end_time":"17:40","location":"E338"}
+  ]
+} 
