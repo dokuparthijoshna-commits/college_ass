@@ -18,7 +18,7 @@ async function sendMessage() {
   userInput.value = "";
 
   try {
-    const response = await fetch("https://collegexbot.loca.lt/webhook", {
+    const response = await fetch("https://bot.dialogflow.com/599b858f-d7a3-4db5-beb4-98a8e63b09b3", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify({

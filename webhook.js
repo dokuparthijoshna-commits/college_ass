@@ -6,7 +6,7 @@ import { readFileSync } from "fs";
 import cors from "cors";
 
 // ✅ Initialize Firebase
-const serviceAccount = JSON.parse(process.env.FIREBASE_KEY);
+const serviceAccount = JSON.parse(readFileSync("serviceAccountKey.json", "utf8"));
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
@@ -30,7 +30,7 @@ app.post("/webhook", async (req, res) => {
       let dateParam = params["date-time"];
       let day;
 
-      // Extract the weekday name (e.g., Monday)
+      // Extract weekday name (e.g., Monday)
       if (dateParam) {
         const date = new Date(dateParam);
         day = date.toLocaleString("en-US", { weekday: "long" });
@@ -50,7 +50,7 @@ app.post("/webhook", async (req, res) => {
       }
 
       const data = docSnap.data();
-      const classes = data.classes || data.timetable; // Support both field names
+      const classes = data.classes || data.timetable;
 
       if (!classes || classes.length === 0) {
         return res.json({
@@ -58,7 +58,6 @@ app.post("/webhook", async (req, res) => {
         });
       }
 
-      // Format class info nicely
       const formatted = classes
         .map(
           (cls) =>
@@ -66,8 +65,16 @@ app.post("/webhook", async (req, res) => {
         )
         .join("\n");
 
+      // ✅ Add context memory for "day"
       return res.json({
         fulfillmentText: `Here are your classes for ${day}:\n${formatted}`,
+        outputContexts: [
+          {
+            name: `${req.body.session}/contexts/day_context`,
+            lifespanCount: 5,
+            parameters: { day: day },
+          },
+        ],
       });
     }
 
@@ -85,7 +92,6 @@ app.post("/webhook", async (req, res) => {
       const classes = data.classes || data.timetable;
       const now = new Date();
 
-      // Find the next upcoming class
       const next = classes.find((c) => {
         const [h, m] = c.start_time.split(":").map(Number);
         const classTime = new Date();
@@ -124,7 +130,6 @@ app.post("/webhook", async (req, res) => {
 
       let found = null;
 
-      // Search across all weekday docs
       for (const day of days) {
         const docSnap = await db.collection("timetable").doc(day).get();
         if (!docSnap.exists) continue;
@@ -133,8 +138,7 @@ app.post("/webhook", async (req, res) => {
         const classes = data.classes || data.timetable;
 
         const match = classes.find(
-          (cls) =>
-            cls.course_name.toLowerCase() === course.toLowerCase()
+          (cls) => cls.course_name.toLowerCase() === course.toLowerCase()
         );
 
         if (match) {
@@ -154,7 +158,7 @@ app.post("/webhook", async (req, res) => {
       }
     }
 
-    // 🧩 Fallback
+    // 🧩 Fallback for unknown intents
     return res.json({
       fulfillmentText: "Sorry, I didn’t understand that. Could you repeat?",
     });
@@ -166,15 +170,14 @@ app.post("/webhook", async (req, res) => {
   }
 });
 
-// ✅ Start server
-app.listen(3000, () => console.log("✅ Webhook is running on port 3000"));
-// ✅ Add this GET route so Vercel can check if the webhook is live
+// ✅ Health route for testing
 app.get("/", (req, res) => {
-  res.send("✅ Webhook is live and working on Vercel!");
+  res.send("✅ Webhook is live and working!");
 });
 
-// ✅ Add this so Vercel can export the app properly
+// ✅ Start server (single instance)
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-export default app;
+app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
 
+// ✅ Export for Vercel or other deployments
+export default app;
