@@ -1,46 +1,37 @@
+const chatBox = document.getElementById("chat-box");
 const userInput = document.getElementById("user-input");
 const sendBtn = document.getElementById("send-btn");
-const chatBox = document.getElementById("chat-box");
 
-function addMessage(text, sender) {
-  const msg = document.createElement("div");
-  msg.classList.add("message", sender);
-  msg.textContent = text;
-  chatBox.appendChild(msg);
+sendBtn.addEventListener("click", sendMessage);
+userInput.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") sendMessage();
+});
+
+function addMessage(message, sender) {
+  const msgDiv = document.createElement("div");
+  msgDiv.classList.add(sender === "bot" ? "bot-message" : "user-message");
+  msgDiv.innerText = message;
+  chatBox.appendChild(msgDiv);
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
 async function sendMessage() {
-  const text = userInput.value.trim();
-  if (!text) return;
+  const message = userInput.value.trim();
+  if (!message) return;
 
-  addMessage(text, "user");
+  addMessage(message, "user");
   userInput.value = "";
 
   try {
-    const response = await fetch("https://bot.dialogflow.com/599b858f-d7a3-4db5-beb4-98a8e63b09b3", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    queryResult: {
-      queryText: text,
-      parameters: { "date-time": new Date().toISOString() },
-      intent: { displayName: "GetTodayClasses" },
-    },
-  }),
-});
+    const res = await fetch("https://collegexbot.loca.lt/webhook", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query: message })
+    });
 
-
-    const data = await response.json();
-    const botReply = data.fulfillmentText || "🤖 Sorry, I couldn’t get that.";
-    addMessage(botReply, "bot");
-  } catch (error) {
-    console.error(error);
-    addMessage("💥 Something went wrong. Try again.", "bot");
+    const data = await res.json();
+    addMessage(data.reply || "Sorry, I didn’t get that.", "bot");
+  } catch (err) {
+    addMessage("⚠️ Error connecting to server.", "bot");
   }
 }
-
-sendBtn.addEventListener("click", sendMessage);
-userInput.addEventListener("keydown", e => {
-  if (e.key === "Enter") sendMessage();
-});
