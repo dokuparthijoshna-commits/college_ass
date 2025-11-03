@@ -6,10 +6,8 @@ import { readFileSync } from "fs";
 import cors from "cors";
 
 // ✅ Initialize Firebase
-const serviceAccount = JSON.parse(readFileSync("serviceAccountKey.json", "utf8"));
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-});
+const serviceAccount = JSON.parse(process.env.FIREBASE_CONFIG);
+
 
 const db = admin.firestore();
 const app = express();
