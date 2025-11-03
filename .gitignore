@@ -1,3 +1,17 @@
-node_modules
-node_modules
+# Firebase and Google SDK
+google-cloud-sdk/
+functions/node_modules/
+node_modules/
 serviceAccountKey.json
+
+# Windows files
+*.exe
+*.bat
+
+# Environment and config
+.env
+cloud_env.bat
+
+# Firebase build files
+.firebaserc
+.firebase/
