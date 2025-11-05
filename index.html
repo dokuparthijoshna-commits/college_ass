@@ -3,21 +3,108 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CollegeBot</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+  <title>VNRVJIET CollegeBot</title>
 </head>
 <body>
-  <section class="chat-container">
-    <div class="chat-box" id="chat-box">
-      <div class="bot-message">Hi 👋, I’m CollegeBot! Ask me about your classes.</div>
-    </div>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">🎓 VNRVJIET CollegeBot</div>
+    <ul class="nav-links">
+      <li><a href="https://vnrvjiet.ac.in/">Home</a></li>
+      <li><a href="https://vnrvjiet.ac.in/admission/">Admissions</a></li>
+      <li><a href="https://vnrvjiet.ac.in/hostel/">Hostel</a></li>
+      <li><a href="https://vnrvjiet.ac.in/contact-us/">Contact</a></li>
+    </ul>
+    <button class="sign-in-btn" id="Eduprime"><i class="fa fa-user"></i> Eduprime</button>
+  </nav>
 
-    <div class="input-container">
-      <input type="text" id="user-input" placeholder="Type your message..." />
-      <button id="send-btn">Send</button>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Your Smart College Assistant 🤖</h1>
+      <p>Ask questions, get instant answers, and explore everything about your college with CollegeBot — powered by AI.</p>
+      <button id="chatBtn" class="sign-in-btn">💬 Chat with Assistant</button>
+    </div>
+    <img src="https://d2lk14jtvqry1q.cloudfront.net/media/large_113_6cea46ef34_37cbc28839.png" alt="CollegeBot Illustration">
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <h2>💡 Why Choose CollegeBot?</h2>
+    <div class="feature-cards">
+      <!-- Course Info Card -->
+      <div class="card" id="courseInfo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <h3>Course Information</h3>
+        <p>Get quick answers about courses, schedules, and academic departments.</p>
+      </div>
+
+      <!-- Placement Support Card -->
+      <div class="card" id="placementInfo">
+        <i class="fa-solid fa-briefcase"></i>
+        <h3>Placement Support</h3>
+        <p>Know the latest placement drives, eligibility criteria, and recruiters.</p>
+      </div>
+
+      <!-- Campus Details Card -->
+      <div class="card" id="campusInfo">
+        <i class="fa-solid fa-building-columns"></i>
+        <h3>Campus Details</h3>
+        <p>Explore campus events, clubs, and facilities in just one chat.</p>
+      </div>
     </div>
   </section>
 
-  <script src="script.js"></script>
+  <!-- Footer -->
+  <footer>
+    © 2025 College --- Powered by Collect.chat
+  </footer>
+
+  <!-- Dialogflow Messenger Integration (Hidden initially) -->
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+  <df-messenger
+    id="df-chat"
+    intent="WELCOME"
+    chat-title="college_assistant"
+    agent-id="599b858f-d7a3-4db5-beb4-98a8e63b09b3"
+    language-code="en"
+    style="display: none;"
+  ></df-messenger>
+
+  <!-- Script -->
+  <script>
+    // Toggle chatbot visibility
+    const chatBtn = document.getElementById("chatBtn");
+    const chat = document.getElementById("df-chat");
+
+    chatBtn.addEventListener("click", () => {
+      if (chat.style.display === "none") {
+        chat.style.display = "block";
+        chatBtn.textContent = "❌ Close Chat";
+      } else {
+        chat.style.display = "none";
+        chatBtn.textContent = "💬 Chat with Assistant";
+      }
+    });
+
+    // Open links when feature cards are clicked
+    document.getElementById("courseInfo").addEventListener("click", () => {
+      window.open("https://vnrvjiet.ac.in/syllabus-books/", "_blank");
+    });
+
+    document.getElementById("placementInfo").addEventListener("click", () => {
+      window.open("https://vnrvjiet.ac.in/training-placement/", "_blank");
+    });
+
+    document.getElementById("campusInfo").addEventListener("click", () => {
+      window.open("https://vnrvjiet.ac.in/campuslife/", "_blank");
+    });
+    document.getElementById("Eduprime").addEventListener("click", () => {
+      window.open("https://automation.vnrvjiet.ac.in/eduprime3", "_blank");
+    });
+  </script>
 </body>
 </html>
+
