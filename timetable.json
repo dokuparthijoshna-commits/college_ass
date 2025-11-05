@@ -1,42 +1,42 @@
 {
   "Monday": [
-    {"course_name":"MFCS","start_time":"10:00","end_time":"11:00","location":"E338"},
-    {"course_name":"Field Project","start_time":"11:00","end_time":"12:00","location":"E338"},
-    {"course_name":"OOPS Lab","start_time":"13:40","end_time":"15:40","location":"E201/202"},
-    {"course_name":"—","start_time":"15:40","end_time":"16:40","location":"E338"}
+    {"course_name":"MFCS","start_time":"10:00","end_time":"11:00","location":"E338","faculty":"Ms. V. Manjula"},
+    {"course_name":"Field Project","start_time":"11:00","end_time":"12:00","location":"E338","faculty":"Ms. Pushpa Kumari / Dr. K. Archana"},
+    {"course_name":"OOPS Lab","start_time":"13:40","end_time":"15:40","location":"E201/202","faculty":"Ms. M. Sharanya / Ms. Preety Singh"},
+    {"course_name":"—","start_time":"15:40","end_time":"16:40","location":"E338","faculty":"—"}
   ],
   "Tuesday": [
-    {"course_name":"PP Lab","start_time":"10:00","end_time":"12:00","location":"E301/302"},
-    {"course_name":"MFCS","start_time":"13:40","end_time":"14:40","location":"E338"},
-    {"course_name":"EEA","start_time":"14:40","end_time":"15:40","location":"E338"}
+    {"course_name":"PP Lab","start_time":"10:00","end_time":"12:00","location":"E301/302","faculty":"Mr. N. Anjaneyulu / Mr. N. Sharanya"},
+    {"course_name":"MFCS","start_time":"13:40","end_time":"14:40","location":"E338","faculty":"Ms. V. Manjula"},
+    {"course_name":"EEA","start_time":"14:40","end_time":"15:40","location":"E338","faculty":"Ms. Sri Pavani"}
   ],
   "Wednesday": [
-    {"course_name":"DBMS","start_time":"10:00","end_time":"11:00","location":"E338"},
-    {"course_name":"H/W","start_time":"11:00","end_time":"12:00","location":"E338"},
-    {"course_name":"OOPS","start_time":"13:40","end_time":"14:40","location":"E338"},
-    {"course_name":"DAA","start_time":"14:40","end_time":"15:40","location":"E338"},
-    {"course_name":"ECA","start_time":"15:40","end_time":"16:40","location":"E338"}
+    {"course_name":"DBMS","start_time":"10:00","end_time":"11:00","location":"E338","faculty":"Ms. Y. Prashanthi"},
+    {"course_name":"H/W","start_time":"11:00","end_time":"12:00","location":"E338","faculty":"Ms. K. Pushpa Kumari"},
+    {"course_name":"OOPS","start_time":"13:40","end_time":"14:40","location":"E338","faculty":"Ms. M. Sharanya Lydia"},
+    {"course_name":"DAA","start_time":"14:40","end_time":"15:40","location":"E338","faculty":"Mr. K. Kishan Babu"},
+    {"course_name":"ECA","start_time":"15:40","end_time":"16:40","location":"E338","faculty":"—"}
   ],
   "Thursday": [
-    {"course_name":"OOPS","start_time":"10:00","end_time":"11:00","location":"E338"},
-    {"course_name":"EEA","start_time":"11:00","end_time":"12:00","location":"E338"},
-    {"course_name":"DBMS","start_time":"13:40","end_time":"14:40","location":"E338"},
-    {"course_name":"DBMS Lab","start_time":"14:40","end_time":"16:40","location":"E303/306"}
+    {"course_name":"OOPS","start_time":"10:00","end_time":"11:00","location":"E338","faculty":"Ms. M. Sharanya Lydia"},
+    {"course_name":"EEA","start_time":"11:00","end_time":"12:00","location":"E338","faculty":"Ms. Sri Pavani"},
+    {"course_name":"DBMS","start_time":"13:40","end_time":"14:40","location":"E338","faculty":"Ms. Y. Prashanthi"},
+    {"course_name":"DBMS Lab","start_time":"14:40","end_time":"16:40","location":"E303/306","faculty":"Ms. Y. Prashanthi / Ms. Pushpa Kumari / Ms. Swapna Kumari"}
   ],
   "Friday": [
-    {"course_name":"MFCS","start_time":"10:00","end_time":"11:00","location":"E338"},
-    {"course_name":"OOPS","start_time":"11:00","end_time":"12:00","location":"E338"},
-    {"course_name":"DAA","start_time":"13:40","end_time":"14:40","location":"E338"},
-    {"course_name":"DBMS","start_time":"14:40","end_time":"15:40","location":"E338"},
-    {"course_name":"LIB","start_time":"15:40","end_time":"16:40","location":"Library"},
-    {"course_name":"SPORTS","start_time":"16:40","end_time":"17:40","location":"Ground"}
+    {"course_name":"MFCS","start_time":"10:00","end_time":"11:00","location":"E338","faculty":"Ms. V. Manjula"},
+    {"course_name":"OOPS","start_time":"11:00","end_time":"12:00","location":"E338","faculty":"Ms. M. Sharanya Lydia"},
+    {"course_name":"DAA","start_time":"13:40","end_time":"14:40","location":"E338","faculty":"Mr. K. Kishan Babu"},
+    {"course_name":"DBMS","start_time":"14:40","end_time":"15:40","location":"E338","faculty":"Ms. Y. Prashanthi"},
+    {"course_name":"LIB","start_time":"15:40","end_time":"16:40","location":"Library","faculty":"Library Staff"},
+    {"course_name":"SPORTS","start_time":"16:40","end_time":"17:40","location":"Ground","faculty":"Sports Department"}
   ],
   "Saturday": [
-    {"course_name":"EEA","start_time":"10:00","end_time":"11:00","location":"E338"},
-    {"course_name":"DAA","start_time":"11:00","end_time":"12:00","location":"E338"},
-    {"course_name":"MFCS","start_time":"13:40","end_time":"14:40","location":"E338"},
-    {"course_name":"DBMS","start_time":"14:40","end_time":"15:40","location":"E338"},
-    {"course_name":"OOPS","start_time":"15:40","end_time":"16:40","location":"E338"},
-    {"course_name":"CCA","start_time":"16:40","end_time":"17:40","location":"E338"}
+    {"course_name":"EEA","start_time":"10:00","end_time":"11:00","location":"E338","faculty":"Ms. Sri Pavani"},
+    {"course_name":"DAA","start_time":"11:00","end_time":"12:00","location":"E338","faculty":"Mr. K. Kishan Babu"},
+    {"course_name":"MFCS","start_time":"13:40","end_time":"14:40","location":"E338","faculty":"Ms. V. Manjula"},
+    {"course_name":"DBMS","start_time":"14:40","end_time":"15:40","location":"E338","faculty":"Ms. Y. Prashanthi"},
+    {"course_name":"OOPS","start_time":"15:40","end_time":"16:40","location":"E338","faculty":"Ms. M. Sharanya Lydia"},
+    {"course_name":"CCA","start_time":"16:40","end_time":"17:40","location":"E338","faculty":"Co-curricular Staff"}
   ]
-} 
+}
